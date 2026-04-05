@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IETASSA - Simón Álvarez</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #f4f6f5;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #1b5e20, #424242);
+    color: white;
+    padding: 15px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+header img {
+    width: 90px;
+}
+
+/* NAV */
+nav {
+    background: #2e7d32;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a {
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    background: #1b5e20;
+}
+
+/* HERO */
+.hero {
+    background: url('imagenes/fondo.jpg') center/cover;
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+}
+.hero h2 {
+    background: rgba(0,0,0,0.6);
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* SECCIONES */
+section {
+    padding: 40px;
+    margin: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+/* TITULOS */
+h2 {
+    color: #1b5e20;
+}
+
+/* TARJETAS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* GALERIA */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+.galeria img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* FORMULARIO */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button {
+    background: #2e7d32;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: #1b5e20;
+}
+
+/* FOOTER */
+footer {
+    background: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header-container">
+    <img src="logo.png" alt="Logo IETASSA">
+    <div>
+        <h1>Institución Educativa Técnica Agropecuaria y de Sistemas “Simón Álvarez”</h1>
+        <p>Samaniego - Nariño | ietassa.edu.co</p>
+    </div>
+</div>
+</header>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="Novedades.html" target="_blank">Novedades</a>
+<a href="Nosotros.html" target="_blank">Nosotros</a>
+<a href="Oferta.html" target="_blank">Oferta Académica</a>
+<a href="Noticias.html" target="_blank">Noticias</a>
+<a href="Galeria.html" target="_blank">Galería</a>
+<a href="Contacto.html" target="_blank">Contacto</a>
+<a href="SEDES.html" target="_blank">PQR</a>
+<a href="PQR.html" target="_blank">PQR</a>
+</nav>
+
+<div class="hero" id="inicio">
+<h2>Educación técnica para el desarrollo agropecuario y tecnológico</h2>
+</div>
+
+<!-- 🔹 SECCIÓN NOTICIAS -->
+<section style="padding: 40px; background: #e8f5e9;">
+
+<h2 style="text-align:center; color:#1b5e20;">Noticias</h2>
+
+<div style="display:flex; justify-content:center; flex-wrap:wrap; gap:20px; margin-top:20px;">
+
+   <div style="background:white; width:300px; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.2);">
+
+    <img src="imagenes/elecciones.jpg" style="width:100%; height:180px; object-fit:cover;">
+
+    <div style="padding:15px;">
+        
+        <h3 style="color:#1b5e20;">
+        Fiesta democrática en la institución
+        </h3>
+
+        <p>
+        La Institución Educativa vivió una significativa jornada de participación durante las elecciones estudiantiles, fortaleciendo los <strong>valores democráticos</strong>, el <strong>liderazgo</strong> y el <strong>sentido de pertenencia</strong>. En un ambiente de respeto, compromiso y entusiasmo, la comunidad estudiantil ejerció su derecho al voto para elegir a sus representantes, evidenciando el interés por construir una institución más participativa e incluyente. Como resultado de esta fiesta democrática, fueron elegidos como representantes para el presente periodo académico:
+        </p>
+
+        <p>
+        <strong>Personero:</strong> Emer Santiago Urbina Ordoñez<br>
+        <strong>Contralora:</strong> Liseth Pahola Bastidas Guerra
+        </p>
+
+        <p> La institución felicita a los estudiantes elegidos y les desea muchos éxitos en el desarrollo de sus funciones, confiando en su capacidad de liderazgo, responsabilidad y compromiso con el bienestar de toda la comunidad educativa. Así mismo, se reconoce la participación activa de todos los estudiantes, docentes y directivos que hicieron posible el desarrollo de esta jornada democrática.</p>
+
+    </div>
+</div>
+
+    
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 IETASSA</p>
+</footer>
+
+</body>
+</html>
