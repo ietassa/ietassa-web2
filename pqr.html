@@ -1,3 +1,21 @@
+<style>
+.boton-inicio {
+  background:#1b5e20;
+  color:white;
+  padding:12px 25px;
+  text-decoration:none;
+  border-radius:8px;
+  font-size:16px;
+  display:inline-block;
+  transition:0.3s;
+}
+
+.boton-inicio:hover {
+  background:#2e7d32;
+  transform:scale(1.05);
+}
+</style>
+
 <section style="padding:40px; background:#f1f8e9;">
 
   <h2 style="text-align:center; color:#1b5e20;">
@@ -27,9 +45,9 @@
     <!-- Configuración -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_subject" value="Nueva PQR desde la página web">
-    
-    <!-- 🔴 REDIRECCIÓN CORREGIDA -->
-    <input type="hidden" name="_next" value="https://ietassa.edu.co/gracias.html">
+
+    <!-- ✅ USA TU LINK DE VERCEL -->
+    <input type="hidden" name="_next" value="https://TUWEB.vercel.app/gracias.html">
 
     <button type="submit" style="
       background:#1b5e20;
@@ -44,5 +62,12 @@
     </button>
 
   </form>
+
+  <!-- 🔘 BOTÓN INICIO -->
+  <div style="text-align:center; margin:40px 0;">
+    <a href="index.html" class="boton-inicio">
+      ⬅ Volver al Inicio
+    </a>
+  </div>
 
 </section>
