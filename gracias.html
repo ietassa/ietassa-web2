@@ -1,0 +1,48 @@
+<section style="padding:40px; background:#f1f8e9;">
+
+  <h2 style="text-align:center; color:#1b5e20;">
+    PQR - Peticiones, Quejas y Reclamos
+  </h2>
+
+  <form action="https://formsubmit.co/ietassa2026@gmail.com" method="POST" 
+        style="max-width:600px; margin:30px auto; background:white; padding:25px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+
+    <label>Correo electrónico:</label><br>
+    <input type="email" name="email" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+
+    <label>Tipo de solicitud:</label><br>
+    <select name="tipo" style="width:100%; padding:10px; margin-bottom:15px;">
+      <option>Petición</option>
+      <option>Queja</option>
+      <option>Reclamo</option>
+      <option>Sugerencia</option>
+    </select><br>
+
+    <label>Mensaje:</label><br>
+    <textarea name="mensaje" rows="5" required style="width:100%; padding:10px; margin-bottom:15px;"></textarea><br>
+
+    <!-- Configuración -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Nueva PQR desde la página web">
+    
+    <!-- Redirección después de enviar -->
+    <input type="hidden" name="_next" value="https://TU-DOMINIO.com/gracias.html">
+
+    <button type="submit" style="
+      background:#1b5e20;
+      color:white;
+      padding:12px;
+      width:100%;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      cursor:pointer;">
+      Enviar PQR
+    </button>
+
+  </form>
+
+</section>
