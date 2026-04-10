@@ -1,47 +1,178 @@
-<section style="padding: 40px; background: #e8f5e9;">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IETASSA - Noticias</title>
 
-  <h2 style="text-align:center; color:#1b5e20; font-size:32px;">Noticias</h2>
+<link rel="icon" href="logo(2).png">
 
-  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:20px; margin-top:30px;">
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #f4f6f5;
+}
 
-    <div style="background:white; width:85%; max-width:1100px; border-radius:15px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.15);">
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #1b5e20, #424242);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
 
-      <img src="imagenes/elecciones.jpg" style="width:100%; height:300px; object-fit:cover;">
+/* SECCIÓN NOTICIAS */
+.noticias {
+    background: #e8f5e9;
+    padding: 40px;
+}
 
-      <div style="padding:25px;">
-        
-        <h3 style="color:#1b5e20; font-size:24px; margin-bottom:15px;">
-          Fiesta democrática en la institución
-        </h3>
+.noticias h2 {
+    text-align: center;
+    color: #1b5e20;
+}
 
-        <p style="font-size:16px; line-height:1.6;">
-          La Institución Educativa vivió una significativa jornada de participación durante las elecciones estudiantiles, fortaleciendo los <strong>valores democráticos</strong>, el <strong>liderazgo</strong> y el <strong>sentido de pertenencia</strong>. En un ambiente de respeto, compromiso y entusiasmo, la comunidad estudiantil ejerció su derecho al voto para elegir a sus representantes, evidenciando el interés por construir una institución más participativa e incluyente.
+/* TARJETA */
+.noticia {
+    display: flex;
+    gap: 20px;
+    background: white;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.noticia:hover {
+    transform: scale(1.02);
+}
+
+/* IMAGEN */
+.noticia img {
+    width: 250px;
+    object-fit: cover;
+}
+
+/* CONTENIDO */
+.contenido {
+    padding: 15px;
+}
+
+.fecha {
+    font-size: 12px;
+    color: gray;
+}
+
+/* TEXTO COMPLETO */
+.completo {
+    display: none;
+    margin-top: 10px;
+}
+
+/* BOTÓN */
+button, .boton-inicio {
+    margin-top: 10px;
+    background: #2e7d32;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover, .boton-inicio:hover {
+    background: #1b5e20;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Noticias Institucionales</h1>
+</header>
+
+<section class="noticias">
+
+<h2>Últimas Noticias</h2>
+
+<!-- NOTICIA 1 -->
+<div class="noticia">
+    <img src="imagenes/posesion.jpg">
+    <div class="contenido">
+        <h3>Posesión de representantes estudiantiles</h3>
+        <p class="fecha">10 de abril de 2026</p>
+
+        <p class="resumen">
+        “Compromiso y liderazgo: así fue la posesión del personero y la contralora estudiantil”…        
         </p>
 
-        <p style="font-size:16px; line-height:1.6;">
-          Como resultado de esta fiesta democrática, fueron elegidos como representantes para el presente periodo académico:
+        <p class="completo">
+       Posesión y juramento de los representantes estudiantiles: liderazgo que inspira a nuestra comunidad educativa
+En un ambiente de respeto, compromiso y participación democrática, el día de ayer se llevó a cabo la posesión y toma de juramento del personero estudiantil y la contralora de la Institución Educativa Técnica Agropecuaria y de Sistemas “Simón Álvarez”.
+Durante este importante acto institucional, se formalizó la elección de los estudiantes que asumirán la responsabilidad de representar y velar por los intereses de la comunidad estudiantil, fortaleciendo así los valores de la democracia, el liderazgo y la participación activa dentro de la institución.
+El evento contó con la presencia de directivos, docentes y estudiantes, quienes acompañaron este significativo momento en el que los representantes electos asumieron su compromiso con responsabilidad, ética y sentido de pertenencia.
+Los estudiantes posesionados fueron:
+        <strong>Personero:</strong> Emer Santiago Urbina Ordoñez<br>
+        <strong>Contralora:</strong> Liseth Pahola Bastidas Guerra
+La institución felicita a los nuevos líderes estudiantiles y les desea éxitos en el desarrollo de sus funciones, confiando en su capacidad para promover el bienestar, la convivencia y la participación de todos los estudiantes.
+De igual manera, se resalta la importancia de estos espacios democráticos que permiten formar ciudadanos íntegros, críticos y comprometidos con su entorno.
+
         </p>
 
-        <p style="font-size:16px; line-height:1.6;">
-          <strong>Personero:</strong> Emer Santiago Urbina Ordoñez<br>
-          <strong>Contralora:</strong> Liseth Pahola Bastidas Guerra
-        </p>
-
-        <p style="font-size:16px; line-height:1.6;">
-          La institución felicita a los estudiantes elegidos y les desea muchos éxitos en el desarrollo de sus funciones, confiando en su capacidad de liderazgo, responsabilidad y compromiso con el bienestar de toda la comunidad educativa. Así mismo, se reconoce la participación activa de todos los estudiantes, docentes y directivos que hicieron posible el desarrollo de esta jornada democrática.
-        </p>
-
-      </div>
+        <button onclick="toggleNoticia(this)">Ver más</button>
     </div>
+</div>
 
-  </div>
+<!-- NOTICIA 2 -->
+<div class="noticia">
+    <img src="imagenes/elecciones.jpg">
+    <div class="contenido">
+        <h3>Fiesta democrática</h3>
+        <p class="fecha">05 de abril de 2026</p>
 
-  <div style="text-align:center; margin:60px 0 20px 0;">
-    <a href="index.html" class="boton-inicio">
-      ⬅ Volver al Inicio
-    </a>
+        <p class="resumen">
+             FIESTA DEMOCRATICA: Elecciones estudiantiles fortalecieron el liderazgo y la participación...
+        </p>
+
+        <p class="completo">
+                   La Institución Educativa vivió una significativa jornada de participación durante las elecciones estudiantiles, fortaleciendo los valores democráticos, el liderazgo y el sentido de pertenencia. En un ambiente de respeto, compromiso y entusiasmo, la comunidad estudiantil ejerció su derecho al voto para elegir a sus representantes, evidenciando el interés por construir una institución más participativa e incluyente. 
+Como resultado de esta fiesta democrática, fueron elegidos como representantes para el presente periodo académico: 
+        <strong>Personero:</strong> Emer Santiago Urbina Ordoñez<br>
+        <strong>Contralora:</strong> Liseth Pahola Bastidas Guerra
+La institución felicita a los estudiantes elegidos y les desea muchos éxitos en el desarrollo de sus funciones, confiando en su capacidad de liderazgo, responsabilidad y compromiso con el bienestar de toda la comunidad educativa. Así mismo, se reconoce la participación activa de todos los estudiantes, docentes y directivos que hicieron posible el desarrollo de esta jornada democrática. 
+
+        </p>
+
+        <button onclick="toggleNoticia(this)">Ver más</button>
+    </div>
+</div>
+
+<!-- BOTÓN VOLVER -->
+<div style="text-align:center; margin:40px;">
+    <a href="index.html" class="boton-inicio">⬅ Volver al Inicio</a>
+</div>
 
 </section>
-  </div>
 
-</section>
+<script>
+function toggleNoticia(btn) {
+    let contenido = btn.parentElement;
+    let completo = contenido.querySelector(".completo");
+
+    if (completo.style.display === "block") {
+        completo.style.display = "none";
+        btn.textContent = "Ver más";
+    } else {
+        completo.style.display = "block";
+        btn.textContent = "Ver menos";
+    }
+}
+</script>
+
+</body>
+</html>
