@@ -6,9 +6,9 @@
 <title>IETASSA - Simón Álvarez</title>
 
 <link rel="icon" href="logo(2).png" type="image/png">
-    
+
 <meta name="google-site-verification" content="q1JPsFTqaEQmM_68-KgFNMUfm0v6qWK93ExJo08tRus" />
-    
+
 <style>
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -80,45 +80,97 @@ h2 {
     color: #1AC926;
 }
 
-/* TARJETAS */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+/* 🔥 FLASHCARDS */
+.flashcards {
+    display: flex;
+    justify-content: center;
     gap: 20px;
-}
-.card {
-    background: #e8f5e9;
-    padding: 20px;
-    border-radius: 10px;
+    flex-wrap: wrap;
 }
 
-/* GALERIA */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-}
-.galeria img {
-    width: 100%;
-    border-radius: 10px;
+/* ✨ TARJETA INTERACTIVA */
+.flashcard {
+    width: 250px;
+    height: 280px;
+    background: white;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+    display: flex;
+    flex-direction: column;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-/* FORMULARIO */
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+/* ✨ EFECTO HOVER */
+.flashcard:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
-button {
+
+/* ✨ EFECTO BRILLO */
+.flashcard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+.flashcard:hover::before {
+    left: 100%;
+}
+
+/* IMAGEN */
+.flashcard img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.flashcard:hover img {
+    transform: scale(1.08);
+}
+
+.flashcard h3 {
+    font-size: 15px;
+    color: #1b5e20;
+    margin: 5px 0;
+}
+
+.resumen {
+    font-size: 13px;
+}
+
+.completo {
+    display: none;
+    font-size: 13px;
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+/* BOTÓN */
+.flashcard button {
+    margin-top: auto;
     background: #2e7d32;
     color: white;
-    padding: 10px;
+    padding: 6px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 13px;
 }
-button:hover {
+
+.flashcard button:hover {
     background: #1b5e20;
 }
 
@@ -136,7 +188,7 @@ footer {
 
 <header>
 <div class="header-container">
-    <img src="logo.png" alt="Logo IETASSA">
+    <img src="logo.png">
     <div>
         <h1>Institución Educativa Técnica Agropecuaria y de Sistemas “Simón Álvarez”</h1>
         <p>Samaniego - Nariño | ietassa.edu.co</p>
@@ -153,58 +205,67 @@ footer {
 <a href="sedes.html" target="_blank">Sedes</a>
 </nav>
 
-<div class="hero" id="inicio">
+<div class="hero">
 <h2>Educación técnica para el desarrollo agropecuario y tecnológico</h2>
 </div>
 
-<!-- 🔹 SECCIÓN NOTICIAS -->
-<<section style="padding: 40px; background: #e8f5e9;">
-
+<!-- 🔹 NOTICIAS -->
+<section style="background: #e8f5e9;">
 <h2 style="text-align:center; color:#1b5e20;">Noticias</h2>
 
 <div class="flashcards">
 
-    <!-- CARD 1 -->
-    <div class="flashcard">
-        <img src="imagenes/elecciones.jpg">
-
-        <h3>Fiesta democrática</h3>
-
-        <p class="resumen">
-            Elecciones estudiantiles fortalecieron el liderazgo y la participación...
-        </p>
-
-        <p class="completo">
-            La Institución vivió una jornada democrática donde se eligieron los representantes estudiantiles, promoviendo valores de liderazgo y participación activa.
-        </p>
-
-        <button onclick="toggleNoticia(this)">Ver más</button>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="flashcard">
-        <img src="imagenes/fondo.jpg">
-
-        <h3>Posesión estudiantil</h3>
-
-        <p class="resumen">
-            Se realizó la toma de juramento del personero y contralora...
-        </p>
-
-        <p class="completo">
-            En un acto institucional se llevó a cabo la posesión oficial de los representantes estudiantiles, fortaleciendo la democracia escolar.
-        </p>
-
-        <button onclick="toggleNoticia(this)">Ver más</button>
-    </div>
-
+<div class="flashcard">
+<img src="imagenes/elecciones.jpg">
+<h3>Fiesta democrática</h3>
+<p class="resumen">Elecciones estudiantiles fortalecieron el liderazgo...</p>
+<p class="completo"> La Institución Educativa vivió una significativa jornada de participación durante las elecciones estudiantiles, fortaleciendo los valores democráticos, el liderazgo y el sentido de pertenencia. En un ambiente de respeto, compromiso y entusiasmo, la comunidad estudiantil ejerció su derecho al voto para elegir a sus representantes, evidenciando el interés por construir una institución más participativa e incluyente. 
+Como resultado de esta fiesta democrática, fueron elegidos como representantes para el presente periodo académico: 
+        <strong>Personero:</strong> Emer Santiago Urbina Ordoñez<br>
+        <strong>Contralora:</strong> Liseth Pahola Bastidas Guerra
+La institución felicita a los estudiantes elegidos y les desea muchos éxitos en el desarrollo de sus funciones, confiando en su capacidad de liderazgo, responsabilidad y compromiso con el bienestar de toda la comunidad educativa. Así mismo, se reconoce la participación activa de todos los estudiantes, docentes y directivos que hicieron posible el desarrollo de esta jornada democrática. 
+</p>
+<button onclick="toggleNoticia(this)">Ver más</button>
 </div>
 
+<div class="flashcard">
+<img src="imagenes/posesion.jpg">
+<h3>Posesión estudiantil</h3>
+<p class="resumen">“Compromiso y liderazgo: así fue la posesión del personero y la contralora estudiantil”….</p>
+<p class="completo"> Posesión y juramento de los representantes estudiantiles: liderazgo que inspira a nuestra comunidad educativa
+En un ambiente de respeto, compromiso y participación democrática, el día de ayer se llevó a cabo la posesión y toma de juramento del personero estudiantil y la contralora de la Institución Educativa Técnica Agropecuaria y de Sistemas “Simón Álvarez”.
+Durante este importante acto institucional, se formalizó la elección de los estudiantes que asumirán la responsabilidad de representar y velar por los intereses de la comunidad estudiantil, fortaleciendo así los valores de la democracia, el liderazgo y la participación activa dentro de la institución.
+El evento contó con la presencia de directivos, docentes y estudiantes, quienes acompañaron este significativo momento en el que los representantes electos asumieron su compromiso con responsabilidad, ética y sentido de pertenencia.
+Los estudiantes posesionados fueron:
+        <strong>Personero:</strong> Emer Santiago Urbina Ordoñez<br>
+        <strong>Contralora:</strong> Liseth Pahola Bastidas Guerra
+La institución felicita a los nuevos líderes estudiantiles y les desea éxitos en el desarrollo de sus funciones, confiando en su capacidad para promover el bienestar, la convivencia y la participación de todos los estudiantes.
+De igual manera, se resalta la importancia de estos espacios democráticos que permiten formar ciudadanos íntegros, críticos y comprometidos con su entorno.
+</p>
+<button onclick="toggleNoticia(this)">Ver más</button>
+</div>
+
+</div>
 </section>
 
 <footer>
 <p>© 2026 IETASSA</p>
 </footer>
+
+<script>
+function toggleNoticia(btn) {
+    let card = btn.parentElement;
+    let completo = card.querySelector(".completo");
+
+    if (completo.style.display === "block") {
+        completo.style.display = "none";
+        btn.textContent = "Ver más";
+    } else {
+        completo.style.display = "block";
+        btn.textContent = "Ver menos";
+    }
+}
+</script>
 
 </body>
 </html>
